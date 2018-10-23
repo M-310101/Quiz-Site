@@ -62,5 +62,6 @@ function display_question() {
     labels[i].innerHTML = answers[count][i]; // sets the text and values to the answers
     radios[i].value = answers[count][i];
   }
+  document.getElementById("questionsAnswered").innerHTML = ((count+1) + "/10");
   return count;
 }

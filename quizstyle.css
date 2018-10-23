@@ -4,6 +4,7 @@ body {
   background-image: url(back1.gif);
   background-size: cover;
 }
+
 .island {
   background-color: rgb(51,51,51);
   margin: 50px 300px;
@@ -16,23 +17,26 @@ body {
 }
 
 .header {
+  margin: 40px auto;
   color: pink;
   font-size: 130%;
 }
 
 .detailing {
+  margin: 10px auto;
   color: white;
   font-size: 130%;
 }
 
 #answers {
+  text-align: left;
   color: white;
   font-size: 70%;
   margin: 50px auto;
 }
 
 .questionInfo {
-  text-align: left;
+  text-align: center;
   padding: 0px 50px;
   margin-top: 40px;
   color: white;
@@ -40,10 +44,7 @@ body {
 }
 
 .button {
-  position: fixed;
-  top: 800px;
-  left: 400px;
-  //align-self: center;
+  position: sticky;
   color: yellow;
   border: none;
   height: 45px;
