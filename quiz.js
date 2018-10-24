@@ -24,8 +24,23 @@ fetch(url)
     display_question();
   }).catch(err => console.error(err));
 
+window.onload = function() {
+function create_paragraph(text, id) {
+  let para = document.createElement("p");
+  let node = document.createTextNode(text);
+  para.appendChild(node);
+  if (html_class) {
+    let element = document.getElementsByClassName(html_class)[0];
+    element.appendChild(para);
+  } else {
+    let element = document.getElementById(html_id);
+    element.appendChild(para);
+  }
+}
+}
 
 function check() {
+  let no_check = true;
   let enters = document.getElementsByName("answer");
   for (let i = 0; i < enters.length; i++) {
     if (enters[i].checked) {
@@ -33,12 +48,20 @@ function check() {
         correct++;
       }
       enters[i].checked = false;
+      no_check = false;
     }
   }
   if (count < 9){ // checks if there have been 10 questions or not
-    display_question();
+    //if (!no_check) { // validation that an option has been checked before moving on
+      display_question();
+    //}
   } else {
-    console.log(correct);
+    let question_element = document.getElementsByClassName("inQuestion")[0];
+    //let end_screen = document.getElementsByClassName("end")[0];
+    question_element.style.display = "none";
+    //end_screen.style.visibility = "visible";
+    //document.getElementById("endScore").innerHTML += correct + " out of 10";
+    create_paragraph("You got "+correct+" out of 10","endScore");
   }
 }
 
